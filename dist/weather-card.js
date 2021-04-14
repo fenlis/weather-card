@@ -172,7 +172,8 @@ class WeatherCard extends LitElement {
         </span>
         ${this._config.name
           ? html` <span class="title"> ${this._config.name} </span> `
-          : ""}
+          : this.hass.states["sensor.naver_weather_weathercast_1"] 
+          ? html` <span class="title"> ${this.hass.states["sensor.naver_weather_weathercast_1"].state} </span> ` : ""}
         <span class="temp"
           >${this.getUnit("temperature") == "°F"
             ? Math.round(stateObj.attributes.temperature)
