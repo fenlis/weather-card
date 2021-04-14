@@ -400,8 +400,8 @@ class WeatherCard extends LitElement {
 
       @media (max-width: 460px) {
         .title {
-          font-size: 2.2em;
-          left: 4em;
+            font-size: 1.1em;
+            left: 7em;
         }
         .temp {
           font-size: 3em;
