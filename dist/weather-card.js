@@ -203,18 +203,16 @@ class WeatherCard extends LitElement {
           ${stateObj.attributes.humidity}<span class="unit"> % </span>
         </li>
         <li>
-          <ha-icon icon="mdi:weather-windy"></ha-icon> ${windDirections[
-            parseInt((stateObj.attributes.wind_bearing + 11.25) / 22.5)
-          ]}
-          ${stateObj.attributes.wind_speed}<span class="unit">
+          <ha-icon icon="mdi:weather-windy"></ha-icon>${stateObj.attributes.wind_speed}
+           (${stateObj.attributes.wind_bearing})<span class="unit">
             ${this.getUnit("length")}/h
           </span>
         </li>
         <li>
-          <ha-icon icon="mdi:gauge"></ha-icon>
-          ${stateObj.attributes.pressure}
+          <ha-icon icon="mdi:blur"></ha-icon>
+          ${this.hass.states["sensor.naver_weather_finedust_1"].state}
           <span class="unit">
-            ${this.getUnit("air_pressure")}
+            ${this.hass.states["sensor.naver_weather_finedust_1"].attributes.unit_of_measurement}
           </span>
         </li>
         <li>
